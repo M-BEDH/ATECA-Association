@@ -1,0 +1,49 @@
+<nav>
+  <div class="left-nav">
+    <ul>
+      <li>
+        <a routerLink="sauces" routerLinkActive="active" *ngIf="isAuth$ | async">
+          Toutes les photos
+        </a>
+      </li>
+      <li>
+        <a routerLink="new-sauce" routerLinkActive="active" *ngIf="isAuth$ | async">
+          Ajouter photos
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="logo">
+    <div class="logo-image">
+      <img alt="plan souterrain" src="../../assets/images/Langoiran.png">
+    </div>
+    <div class="logo-text">
+      <h1>
+        A T E C A
+      </h1>
+      <h5>
+        <span>A</span>ssociation de <span>T</span>opologie et d'<span>E</span>xploration des <span>C</span>arrières
+        d'<span>A</span>quitaine
+      </h5>
+    </div>
+  </div>
+  <div class="right-nav">
+    <ul>
+      <li>
+        <a routerLink="signup" routerLinkActive="active" *ngIf="!(isAuth$ | async)">
+          SIGN UP
+        </a>
+      </li>
+      <li>
+        <a routerLink="login" routerLinkActive="active" *ngIf="!(isAuth$ | async)">
+          LOGIN
+        </a>
+      </li>
+      <li>
+        <a (click)="onLogout()" *ngIf="isAuth$ | async">
+          LOGOUT
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
